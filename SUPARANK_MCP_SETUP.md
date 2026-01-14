@@ -81,6 +81,58 @@ Perform comprehensive pre-publish quality assurance
 - Checks grammar, SEO requirements, brand consistency
 - Validates accessibility and technical accuracy
 
+### 10. **schema_generate**
+Implement Schema.org structured data markup
+- Auto-detects page type from content
+- Generates JSON-LD structured data
+- Supports Article, HowTo, FAQ, and other schemas
+
+### 11. **full_pipeline**
+Execute complete 5-phase content creation pipeline
+- **Phase 1 - Research**: Keyword research and competitor analysis
+- **Phase 2 - Planning**: SEO strategy and content brief
+- **Phase 3 - Creation**: Write the article
+- **Phase 4 - Optimization**: Internal links, schema, GEO
+- **Phase 5 - Quality**: Grammar, SEO, brand checks
+
+### 12. **create_content** ⭐ Recommended
+Main entry point for content creation with natural language
+- **Research Phase**: keyword_research → seo_strategy → topical_map → content_calendar
+- **Creation Phase**: content_planning → content_write → save_content
+- **Optimization Phase**: quality_check → geo_optimize
+- **Publishing Phase**: generate_image → publish_content
+- Simply tell it what content you want (e.g., "Write a blog post about AI tools")
+- Can create multiple articles at once
+- Automatically generates hero images with Gemini
+
+## Recommended Workflows
+
+### Quick Start (Beginners)
+Use **create_content** - just describe what you want in natural language:
+```json
+{
+  "request": "Write a blog post about React hooks",
+  "with_images": true
+}
+```
+
+### Custom Control (Advanced)
+Use individual tools for more control:
+1. **keyword_research** - Find opportunities
+2. **seo_strategy** - Plan content
+3. **content_write** - Create article
+4. **schema_generate** - Add structured data
+5. **quality_check** - Final review
+
+### Full Automation
+Use **full_pipeline** for complete automated workflow:
+```json
+{
+  "seed_keyword": "react hooks",
+  "content_type": "guide"
+}
+```
+
 ## Usage
 
 After restarting Claude Code, you can use these tools by invoking them through the MCP interface. The tools will automatically use:
